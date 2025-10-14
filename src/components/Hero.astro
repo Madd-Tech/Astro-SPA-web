@@ -2,24 +2,52 @@
 import Nav from "./Nav.astro";
 ---
 
-<main>
-    <Nav />
-  
-    <div class="parents">
-          <div class="overlay h-full px-12 py-8 flex flex-col md:flex-row">
-              <div class="child md:px-10 md:items-center md:justify-center md:py-7">
-                  <h1 style="font-family:'Montserrat' " class="text-5xl text-primary font-bold">Temukan Rasa disetiap suapan</h1>
-                   <p class="w-50 md:w-150 md:text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi veritatis
-                     totam eos, dicta autem recusandae ullam cum consequuntur dolor quod. 
-                     Explicabo, quam? Dolorem cumque tenetur sit maxime facilis vitae modi.</p>
-              </div>
-              <div class="child">
-                <img src="../assets/images/Hero_Content_Polos.png" alt="Slog">
-              </div>
-              <div class="child">
-                <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl"><a href="">Pesan Sekarang!</a></button>
-              </div>
-          </div>
+<main class="rounded-bl-[40px] rounded-br-[40px]">
+    <Nav /> <!-- Navbar components -->
+
+    <div>
+        <div class="overlay h-full px-12 py-8 flex flex-col md:flex-row">
+            <div
+                class="child md:px-10 md:items-center  md:justify-center md:py-7"
+            >
+            <div class="typho mb-4">
+                <h1 style="font-family:'Montserrat'"class="text-5xl text-primary font-bold">
+                    Temukan Rasa disetiap suapan
+                </h1> <!-- hero section header -->
+                <p class="w-50 md:w-150 md:text-left">  <!-- hero section caption -->
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nisi veritatis totam eos, dicta autem recusandae ullam cum
+                    consequuntur dolor quod. Explicabo, quam? Dolorem cumque
+                    tenetur sit maxime facilis vitae modi.
+                </p>
+            </div>
+            <div class="flex flex-col gap-4 md:flex-row"> <!-- buttons group -->
+
+                <button
+                    class="px-3 py-1.5  rounded-lg text-white font-semibold
+  backdrop-blur-md bg-white/10 border-x-3 border-y-1 border-red-600 
+  shadow-md hover:bg-white/20 hover:shadow-lg transition-all duration-300"
+                >
+                <a href=" " class="underline decoration-red-600/30">
+                    Pesan Sekarang!
+                </a>  <!-- direct to order page -->
+                </button>
+                <span class="text-center italic font-sm">atau</span>
+                <button
+                    class="px-3 py-1.5 rounded-lg text-white font-semibold
+  backdrop-blur-md bg-white/10 border-x-3 border-y-1 border-red-600 
+  shadow-md hover:bg-white/20 hover:shadow-lg transition-all duration-300"
+                >
+                <a href=" " class="underline decoration-red-600/30">
+                    Tanya Penjual
+                </a> <!--direct to message seller -->
+                </button>
+            </div>
+            </div>
+            <div class="child hidden md:flex">
+                <img src="../assets/images/Hero_Content_Tittle.png" alt="Slog" />
+            </div>
+        </div>
     </div>
 </main>
 
@@ -33,14 +61,15 @@ import Nav from "./Nav.astro";
         src: url("../assets/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf");
     }
     main {
-        background-image: url("../assets/images/Hero_Content_Polos.png");
+        background-image: url("../assets/images/Hero_Content_Polos.png"); /*background pada hero section */
         height: 100vh;
         background-repeat: no-repeat;
         background-size: cover;
-        color:#E4E4E4;
+        color: #e4e4e4;
     }
     .overlay {
         background-color: hsla(0, 0%, 0%, 0.543);
-        
+    }
+    .btn-hero {
     }
 </style>

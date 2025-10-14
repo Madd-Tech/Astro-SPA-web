@@ -1,25 +1,26 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
+import Profile from '../components/Profile.astro';
 import Layout from '../layouts/Layout.astro';
-
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<div class="landing-page">
-		<!-- <Nav/> -->
-		<Hero/>
+<Layout> <!--  template layouting -->
+	<main class="flex flex-col">
 
-	</div>
+		<div class="landing-page mb-20 md:mb-50"> <!--hero section -->
+			<Hero/>	
+		</div>
+		<div class="profile"> <!--profile section -->
+          <Profile/>
+		</div>
+	</main>
 </Layout>
 
 <style>
-	.landing-page{
-		
-		
+	main{
+		background-color: #151419;
 	}
+
+	
 </style>
