@@ -1,0 +1,84 @@
+---
+import FooterLogo from "../assets/images/Footer/FooterLogo.svg";
+---
+
+
+<main class="mt-5">
+    <div class="flex flex-col md:flex-row ">
+
+        <div class="child w-full flex md:w-1/2 justify-evenly">
+            <div class="g-child">
+              <a href="#nav">
+    <img
+      src={FooterLogo.src}
+      width="150"
+      height="80"
+      alt="Footer Logo"
+      class="transition duration-300 hover:drop-shadow-[0_0_10px_#D64218] hover:brightness-125"
+    />
+    </a>
+            </div>
+
+            <div class="g-child flex-col">
+            <div class="">
+               <h3 class="font-bold text-2xl">Quick Links</h3>
+            </div>
+            <div class="flex-col">
+                <ul class="font-semibold">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Profile</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">Gallery</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="child w-full ml-16 flex  md:w-1/2 flex-col">
+             <div class="flex">
+               <h3 class="font-bold text-2xl">Contact</h3>
+            </div>
+            <div class="flex-col">
+                <ul class="font-semibold">
+                    <li><a href="">cumiq@yourdomain.com</a></li>
+                    <li><a href="">+62(812)837 40101</a></li>
+                    <li><a href="">Dapura Foodcourt, Jl.Meruya illir raya</a></li>
+                    <li><a href="">Contact us</a></li>
+                 
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="mt-5">
+        <span class="flex justify-center text-sm">Copyright &amp 2025 cumi-q | Powered by cumi-q</span>
+    </footer>
+</main>
+
+<style>
+    .mt-5 li{
+        color:#EA6D00;
+    }
+      
+  	 @font-face {
+        font-family: "Poppins";
+        src: url("../assets/fonts/Poppins/Poppins-Light.ttf");
+    }
+  	 @font-face {
+        font-family: "PoppinsBold";
+        src: url("../assets/fonts/Poppins/Poppins-Bold.ttf");
+    }
+    li{
+        font-family:"Poppins";
+    }
+    h3{
+        color:#E4E4E4;
+        font-family: "PoppinsBold";
+    }
+    span{
+        font-family: "Poppins";
+        color:#EEE2D5;
+       background-color: #262626;
+    }
+</style>
