@@ -2,10 +2,14 @@
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
 import Profile from '../components/Profile.astro';
+import Gallery from '../components/Gallery.astro';
 import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
----
+import "aos/dist/aos.css";
 
+---
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></link>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <Layout> <!--  template layouting -->
 	<main class="flex flex-col">
          <div class="sticky top-0 z-99">
@@ -17,10 +21,14 @@ import Layout from '../layouts/Layout.astro';
 		<div class="profile"> <!--profile section -->
           <Profile/>
 		</div>
+		<div class="gallery">
+			<Gallery/>
+		</div>
 		<footer>
 			<Footer/>
 		</footer>
 	</main>
+	
 </Layout>
 
 <style>
@@ -30,3 +38,4 @@ import Layout from '../layouts/Layout.astro';
 
 	
 </style>
+
