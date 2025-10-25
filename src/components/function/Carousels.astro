@@ -1,0 +1,162 @@
+---
+import Gallery1 from "../../assets/images/Gallery/gallery1.png";
+import Gallery2 from "../../assets/images/Gallery/gallery2.png";
+import Gallery3 from "../../assets/images/Gallery/gallery3.png";
+
+const slides = [Gallery1, Gallery2, Gallery3];
+---
+
+<style>
+  .carousel-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin: 40px auto;
+    display: none;
+  }
+
+  /* tampil hanya di mobile & tablet */
+  @media (max-width: 1200px) {
+    .carousel-container {
+      display: block;
+    }
+  }
+
+  .carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+    transition: filter 0.4s ease;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    border-radius: 16px;
+    display: block;
+  }
+
+  .carousel-slide.blur {
+    filter: blur(3px) brightness(0.8);
+  }
+
+  /* Tombol navigasi */
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.3s ease;
+  }
+
+  .carousel-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .carousel-button.left {
+    left: 10px;
+  }
+
+  .carousel-button.right {
+    right: 10px;
+  }
+
+  /* Indikator titik */
+  .carousel-indicators {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+
+  .carousel-indicators span {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .carousel-indicators span.active {
+    background: #fff;
+    transform: scale(1.2);
+  }
+</style>
+
+<div class="carousel-container">
+  <button class="carousel-button left" id="prev">&#10094;</button>
+
+  <div class="carousel-slides" id="slides">
+    {slides.map((img, index) => (
+      <div class="carousel-slide" data-index={index}>
+        <img src={img.src} alt={`Slide ${index + 1}`} />
+      </div>
+    ))}
+  </div>
+
+  <button class="carousel-button right" id="next">&#10095;</button>
+
+  <div class="carousel-indicators" id="indicators">
+    {slides.map((_, index) => (
+      <span data-index={index}></span>
+    ))}
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".carousel-slide");
+    const indicators = document.querySelectorAll(".carousel-indicators span");
+    const slidesContainer = document.getElementById("slides");
+    let currentIndex = 0;
+
+    const updateCarousel = () => {
+      slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("blur", i !== currentIndex);
+      });
+
+      indicators.forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentIndex);
+      });
+    };
+
+    const nextSlide = () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    };
+
+    const prevSlide = () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    };
+
+    document.getElementById("next").addEventListener("click", nextSlide);
+    document.getElementById("prev").addEventListener("click", prevSlide);
+
+    indicators.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        currentIndex = Number(dot.dataset.index);
+        updateCarousel();
+      });
+    });
+
+    updateCarousel();
+  });
+</script>

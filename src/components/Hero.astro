@@ -3,7 +3,7 @@ import Nav from "./Nav.astro";
 import Slog from "../assets/images/Hero_Content_Tittle2.png"
 ---
 
-<main class="rounded-bl-[40px] rounded-br-[40px]">
+<main id="Hero" class="rounded-bl-[40px] rounded-br-[40px]">
     <!-- <Nav /> Navbar components -->
 
     <div>
@@ -16,30 +16,25 @@ import Slog from "../assets/images/Hero_Content_Tittle2.png"
                     Temukan Rasa disetiap suapan
                 </h1> <!-- hero section header -->
                 <p class="w-50 md:w-150 md:text-left">  <!-- hero section caption -->
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nisi veritatis totam eos, dicta autem recusandae ullam cum
-                    consequuntur dolor quod. Explicabo, quam? Dolorem cumque
-                    tenetur sit maxime facilis vitae modi.
+                   Keripik Cumi GurihPedas menghadirkan sensasi kriuk yang bikin nagih, cita rasa laut yang autentik, dan kebahagiaan di setiap gigitan!,
+                   Setiap gigitan memberi sensasi laut yang autentik, seolah kamu sedang menikmati cumi segar langsung dari pantai.
+                   Karena bagi kami, kebahagiaan sejati adalah saat kamu tersenyum menikmati lezatnya keripik cumi buatan lokal.
                 </p>
             </div>
             <div class="flex flex-col gap-4 md:flex-row"> <!-- buttons group -->
 
                 <button
-                    class="px-3 py-1.5  rounded-lg text-white font-semibold
-  backdrop-blur-md bg-white/10 border-x-3 border-y-1 border-red-600 
-  shadow-md hover:bg-white/20 hover:shadow-lg transition-all duration-300"
+                    class="px-3 py-1.5  rounded-lg text-white "
                 >
-                <a href=" " class="underline decoration-red-600/30">
+                <a href=" " class=" decoration-red-600/30">
                     Pesan Sekarang!
                 </a>  <!-- direct to order page -->
                 </button>
                 <span class="text-center italic font-sm">atau</span>
                 <button
-                    class="px-3 py-1.5 rounded-lg text-white font-semibold
-  backdrop-blur-md bg-white/10 border-x-3 border-y-1 border-red-600 
-  shadow-md hover:bg-white/20 hover:shadow-lg transition-all duration-300"
+                    class="px-3 py-1.5 rounded-lg text-white"
                 >
-                <a href=" " class="underline decoration-red-600/30">
+                <a href=" " class="decoration-red-600/30">
                     Tanya Penjual
                 </a> <!--direct to message seller -->
                 </button>
@@ -61,6 +56,10 @@ import Slog from "../assets/images/Hero_Content_Tittle2.png"
         font-family: "MontserratItalic";
         src: url("../assets/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf");
     }
+     @font-face {
+        font-family: "PoppinsSemiBold";
+        src: url("../assets/fonts/Poppins/Poppins-Regular.ttf");
+    }
     main {
         background-image: url("../assets/images/Hero_Content_Polos.png"); /*background pada hero section */
         height: 100vh;
@@ -71,6 +70,13 @@ import Slog from "../assets/images/Hero_Content_Tittle2.png"
     .overlay {
         background-color: hsla(0, 0%, 0%, 0.543);
     }
-    .btn-hero {
+    button {
+        font-family: "PoppinsSemiBold";
+        background-color: #561306;
+    }
+    button:hover{
+        background-color: #E4E4E4;
+       
+        color:#561306;
     }
 </style>

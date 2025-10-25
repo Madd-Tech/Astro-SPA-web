@@ -2,10 +2,14 @@
 import Gallery1 from "../assets/images/Gallery/gallery1.png"
 import Gallery2 from "../assets/images/Gallery/gallery2.png"
 import Gallery3 from "../assets/images/Gallery/gallery3.png"
+import Carousels from "./function/Carousels.astro";
 ---
 
-<main class="flex p-10 justify-evenly">
-
+<main class="flex flex-col gap:4 md:flex-row p-10 justify-evenly" id="Gallery">
+  <section class="md:hidden flex">
+    <Carousels/>
+  </section>
+   <section class="hidden md:flex w-full justify-evenly">
    <div class="parents  md:h-full md:w-78  flex-col p-md rounded-bl-[50px] rounded-tr-[50px]">
      <div class="child">
        <img src={Gallery1.src} class=" w-full object-cover rounded-tr-[50px]" alt="Gallery1">
@@ -13,8 +17,6 @@ import Gallery3 from "../assets/images/Gallery/gallery3.png"
      <div class="child rounded-bl-[50px] py-4 px-4">
         <h3>SENSATION</h3>
         <p>Rasakan sensasi renyah dan gurih dari keripik cumi pilihan yang bikin lidah tak berhenti mengunyah!.
-            Setiap gigitan memberi sensasi laut yang autentik, seolah kamu sedang menikmati cumi segar langsung dari pantai.
-            Siap-siap dibuat ketagihan oleh sensasi kriuk pedas yang menggoda — sekali coba, pasti tak cukup satu!
         </p>
      </div>
    </div>
@@ -25,9 +27,7 @@ import Gallery3 from "../assets/images/Gallery/gallery3.png"
      </div>
      <div class="child rounded-bl-[50px] py-4 px-4">
         <h3>FLAVOUR</h3>
-        <p>Terbuat dari cumi asli dan bumbu rempah khas nusantara, menghadirkan cita rasa yang istimewa di setiap helai.
-            Perpaduan gurih, asin, dan pedas menciptakan cita rasa sempurna yang melekat di lidah dan di hati.
-            Dari bahan terbaik hingga proses olahan yang teliti. 
+        <p>Terbuat dari cumi asli dan bumbu rempah khas nusantara, menghadirkan cita rasa yang istimewa.
         </p>
      </div>
    </div>
@@ -38,18 +38,15 @@ import Gallery3 from "../assets/images/Gallery/gallery3.png"
      <div class="child rounded-bl-[50px] py-4 px-4">
         <h3>HAPPINES</h3>
         <p>Bagikan kebahagiaan sederhana bersama keluarga lewat renyahnya keripik cumi setiap waktu.
-            Setiap gigitan membawa kebahagiaan kecil yang nyata — teman setia di saat santai maupun sibuk.
-            Karena bagi kami, kebahagiaan sejati adalah saat kamu tersenyum menikmati lezatnya keripik cumi buatan lokal.
-        </p>
      </div>
    </div>
 
-
+</section>
 </main>
 
 <style>
     .parents{
-        border:2px solid #EA6D00;
+        /* border:2px solid #EA6D00; */
     }
     .parents .child:nth-child(2){
         color:#E4E4E4;
