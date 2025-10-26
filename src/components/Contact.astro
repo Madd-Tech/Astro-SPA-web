@@ -12,7 +12,7 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
   <!-- HEADER -->
   <div
     class="head w-full flex justify-center items-center p-10 bg-cover bg-no-repeat"
-    style="background-image: url('../assets/images/background/patternContact.png');"
+   
   >
     <img src={contact.src} class="w-64 md:w-80" alt="contact us" />
   </div>
@@ -20,7 +20,6 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
   <!-- FORM & ICON WRAPPER -->
   <div
     class="form flex flex-col md:flex-row justify-evenly items-start gap-10 p-10 bg-cover bg-no-repeat"
-    style="background-image: url('../assets/images/background/patternmain.png');"
   >
     <!-- FORM -->
      
@@ -28,6 +27,7 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
       action=""
       class="w-full md:w-1/2 space-y-6 bg-[#561306]/20 backdrop-blur-sm p-6 rounded-xl"
     >
+     <h2 class="font-[PoppinsSemiBold]">Sending email to us!</h2>
       <div class="flex flex-col">
         <label for="email" class="font-[PoppinsSemiBold] mb-1">Email</label>
         <input
@@ -73,6 +73,7 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
     <div
       class="grid grid-cols-2 grid-rows-2 gap-4 w-full md:w-1/2 place-items-center"
     >
+   
       <div
         class="icons flex flex-col items-center justify-center gap-2 p-6 rounded-xl bg-[#561306] shadow-md hover:scale-105 transition-transform duration-300 w-full max-w-[200px]"
       >
@@ -117,11 +118,18 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
     font-family: "PoppinsSemiBold";
     src: url("../assets/fonts/Poppins/Poppins-SemiBold.ttf");
   }
+  .head{
+    background-image: url('../assets/images/background/patternContact.png');
+  }
+  .form{
+    background-image: url('../assets/images/background/patternmain.png');
+  }
 
   /* Sembunyikan icon di mobile */
   @media (max-width: 640px) {
     .icons {
       display: none;
     }
+    
   }
 </style>

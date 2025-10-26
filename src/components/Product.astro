@@ -1,0 +1,91 @@
+---
+import PatternMain from "../assets/images/background/patternmain.png"
+import BocahSd from "../assets/images/Products/Lvl_Bocah_Sd.png"
+import BocahSmp from "../assets/images/Products/Lvl_Bocah_Smp.png"
+import BocahSmk from "../assets/images/Products/Lvl_Bocah_Smk.png"
+import Paket from "../assets/images/Products/Lvl_all.png"
+---
+
+<main class="flex flex-col">
+    <div class="child flex flex-col gap-[2em] py-15 px-lg md:px-25">
+        <h2 class="text-4xl text-center font-[PoppinsBold]">PRODUCTS</h2>
+        <div class="navigation flex font-[PoppinsSemibold] justify-evenly">
+            <button>Cari Produk</button>
+            <button>Harga Min</button>
+            <button>Harga Min</button>
+            <button>Urutkan</button>
+            <button>Reset</button>
+        </div>
+
+
+        <div class="flex justify-evenly md:flex items-center">
+
+        <div class="items flex-col max-w-[150px] rounded-lg">
+            <img src={BocahSd.src} class="rounded-lg" alt="">
+            <div class="info">
+                <p class="font-[PoppinsSemibold] text-[#561306]  text-sm">Kripik Cumi Hytam pak Kris Lvl. <span>SD</span></p>
+                <span class="font-[PoppinsBold] text-[#EA6D00] ">RP. 8.500</span>
+                <button class="font-[PoppinsBold]">+Keranjang</button>
+            </div>
+        </div>
+        <div class="items flex-col max-w-[150px] rounded-lg">
+            <img src={BocahSmp.src} class="rounded-lg" alt="">
+            <div class="info">
+                <p class="font-[PoppinsSemibold] text-[#561306]  text-sm">Kripik Cumi Hytam pak Kris Lvl. <span>Smp</span></p>
+                <span class="font-[PoppinsBold] text-[#EA6D00] ">RP. 8.500</span>
+                <button class="font-[PoppinsBold]">+Keranjang</button>
+            </div>
+        </div>
+        <div class="items flex-col max-w-[150px] rounded-lg">
+            <img src={BocahSmk.src} class="rounded-lg" alt="">
+            <div class="info">
+                <p class="font-[PoppinsSemibold] text-[#561306]  text-sm">Kripik Cumi Hytam pak Kris Lvl. <span>Smk</span></p>
+                <span class="font-[PoppinsBold] text-[#EA6D00] ">RP. 8.500</span>
+                <button class="font-[PoppinsBold]">+Keranjang</button>
+            </div>
+        </div>
+        <div class="items flex-col max-w-[150px] rounded-lg">
+            <img src={Paket.src} class="rounded-lg" alt="">
+            <div class="info">
+                <p class="font-[PoppinsSemibold] text-[#561306]  text-sm">Kripik Cumi Hytam pak Kris . <span>Bundle</span></p>
+                <span class="font-[PoppinsBold] text-[#EA6D00] ">RP. 21.000</span>
+                <button class="font-[PoppinsBold]">+Keranjang</button>
+            </div>
+        </div>
+
+        </div>
+
+
+    </div>
+    <div class="child"></div>
+</main>
+
+<style>
+  main{
+    background-image: url('/src/assets/images/background/patternmain.png');
+  }
+  h2 , .navigation{
+    color:#E4E4E4;
+  }
+  .navigation button{
+    background-color: #262626;
+    padding:5px 15px;
+    border-radius: 10px;
+  }
+  .items{
+    background-color: #E4E4E4;
+  }
+  .info{
+    padding:7px 10px;
+  }
+  .items button{
+    background-color: #EA6D00;
+    padding:2px 15px;
+    border-radius: 10px;
+    color:#E4E4E4;
+  }
+  .items button:hover{
+    color:#EA6D00;
+    background-color: #E4E4E4;
+  }
+</style>
