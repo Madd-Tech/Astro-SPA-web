@@ -24,6 +24,7 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
     <!-- FORM -->
      
     <form
+    id="feedbackForm"
       action=""
       class="w-full md:w-1/2 space-y-6 bg-[#561306]/20 backdrop-blur-sm p-6 rounded-xl"
     >
@@ -31,8 +32,9 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
       <div class="flex flex-col">
         <label for="email" class="font-[PoppinsSemiBold] mb-1">Email</label>
         <input
+        id="email"
           type="email"
-          name="email"
+          name="from_email"
           required
           placeholder="Enter your email..."
           class="bg-[#e4e4e4] text-[#262626] rounded-lg p-2 focus:ring-2 focus:ring-[#561306] outline-none"
@@ -42,8 +44,9 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
       <div class="flex flex-col">
         <label for="name" class="font-[PoppinsSemiBold] mb-1">Name</label>
         <input
+        id="name"
           type="text"
-          name="name"
+          name="from_name"
           required
           placeholder="Enter your name..."
           class="bg-[#e4e4e4] text-[#262626] rounded-lg p-2 focus:ring-2 focus:ring-[#561306] outline-none"
@@ -51,9 +54,10 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
       </div>
 
       <div class="flex flex-col">
-        <label for="feedback" class="font-[PoppinsSemiBold] mb-1">Feedback</label>
+        <label for="message" class="font-[PoppinsSemiBold] mb-1">Feedback</label>
         <textarea
-          name="feedback"
+        id="message"
+          name="message"
           rows="4"
           required
           placeholder="What's your feedback?"
@@ -67,6 +71,7 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
       >
         Submit
       </button>
+       <p id="feedbackStatus" class="text-center text-sm mt-3 text-gray-400"></p>
     </form>
 
     <!-- ICONS (manual 4 item) -->
@@ -109,6 +114,7 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
   </div>
 </main>
 
+<script src="../components/function/email.js"></script>
 <style>
   @font-face {
     font-family: "Poppins";
