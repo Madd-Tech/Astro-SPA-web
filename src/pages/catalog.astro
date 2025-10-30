@@ -31,13 +31,13 @@ const products = [
 	
 
 
-<main class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100">
+<main class="bg-main min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100">
   <!-- Header -->
-  <header class="py-8 px-4 text-center border-b border-gray-700">
+  <header class="py-8 px-4 text-center border-b-[2px] border-yellow-700">
     <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
       PRODUCTS
     </h1>
-    <p class="text-gray-400 mt-2">Kripik Cumi Hytam - Pedas Bersahaja</p>
+    <p class="text-gray-400 mt-2">Kripik Cumi Hytam - Pak Kris</p>
   </header>
 
   <!-- Filter Buttons -->
@@ -57,14 +57,14 @@ const products = [
       class="sort-btn px-6 py-2.5 rounded-lg font-medium transition-all bg-gray-800 text-gray-300 hover:bg-gray-700"
       data-sort="min"
     >
-      💰 Harga Terendah
+      Harga Terendah
     </button>
     <button
       id="sortMax"
       class="sort-btn px-6 py-2.5 rounded-lg font-medium transition-all bg-gray-800 text-gray-300 hover:bg-gray-700"
       data-sort="max"
     >
-      💎 Harga Tertinggi
+      Harga Tertinggi
     </button>
   </section>
 
@@ -86,7 +86,7 @@ const products = [
   </button>
 
   <!-- Sidebar Overlay -->
-  <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity"></div>
+  <div id="overlay" class="hidden fixed inset-0 bg-yellow bg-opacity-10 z-40 transition-opacity"></div>
 
   <!-- Sidebar Cart -->
   <aside
@@ -95,7 +95,7 @@ const products = [
   >
     <div class="h-full flex flex-col">
       <!-- Sidebar Header -->
-      <div class="flex items-center justify-between p-6 border-b border-gray-700">
+      <div class="flex mt-20 items-center justify-between p-6 border-b border-gray-700">
         <h2 class="text-2xl font-bold flex items-center gap-2">
           <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
@@ -134,7 +134,7 @@ const products = [
 
 <script is:inline define:vars={{ products }}>
   const PRODUCTS = products;
-  const WHATSAPP_NUMBER = '6281327370987'; // Ganti dengan nomor WhatsApp Anda
+  const WHATSAPP_NUMBER = '6281327370987'; 
   
   let cart = [];
   let currentSort = 'all';
@@ -170,7 +170,7 @@ const products = [
             class="w-full h-48 object-cover"
           />
           <div class="absolute top-2 right-2 bg-amber-500 text-gray-900 px-2 py-1 rounded-full text-xs font-bold">
-            HOT 🔥
+            Varian Baru
           </div>
         </div>
         <div class="p-4">
@@ -377,6 +377,9 @@ const products = [
 
   #cartItems::-webkit-scrollbar-thumb:hover {
     background: rgba(245, 158, 11, 0.7);
+  }
+  .bg-main{
+    background-image: url('../assets/images/background/patternContact.png');
   }
 </style>
 		<footer>
