@@ -1,73 +1,104 @@
 ---
-import PatternMain from "../assets/images/background/patternmain.png"
 import BocahSd from "../assets/images/Products/Lvl_Bocah_Sd.png"
 import BocahSmp from "../assets/images/Products/Lvl_Bocah_Smp.png"
 import BocahSmk from "../assets/images/Products/Lvl_Bocah_Smk.png"
 import Paket from "../assets/images/Products/Lvl_all.png"
+import CumiPanggang from "../assets/images/Products/CumiPanggang.png"
+import DaunJeruk from "../assets/images/Products/DaunJeruk.png"
+import Keju from "../assets/images/Products/Keju.png"
+import SeaSalt from "../assets/images/Products/SeaSalt.png"
+
+const products = [
+  {
+    id: 1,
+    name: "Kripik Cumi Hytam pak Kris Lvl. SD",
+    image: BocahSd.src,
+    level: "SD",
+    link: "/catalog"
+  },
+  {
+    id: 2,
+    name: "Kripik Cumi Hytam pak Kris Lvl. SMP",
+    image: BocahSmp.src,
+    level: "SMP",
+    link: "/catalog"
+  },
+  {
+    id: 3,
+    name: "Kripik Cumi Hytam pak Kris Lvl. SMK",
+    image: BocahSmk.src,
+    level: "SMK",
+    link: "/catalog"
+  },
+  {
+    id: 4,
+    name: "Kripik Cumi Hytam pak Kris Bundle",
+    image: Paket.src,
+    level: "Bundle",
+    link: "/catalog"
+  },
+  {
+    id:5,
+    name: "Kripik Cumi Hytam pak Kris Cumi Panggang",
+    image: CumiPanggang.src,
+    level: "Cumi Panggang",
+    link:"/catalog"
+  },
+  {
+    id:6,
+    name: "Kripik Cumi Hytam pak Kris Daun Jeruk",
+    image: DaunJeruk.src,
+    level: "Daun Jeruk",
+    link:"/catalog"
+  },
+  {
+    id:7,
+    name: "Kripik Cumi Hytam pak Kris Keju",
+    image: Keju.src,
+    level: "Keju",
+    link:"/catalog"
+  },
+  {
+    id:8,
+    name: "Kripik Cumi Hytam pak Kris Sea Salt",
+    image: SeaSalt.src,
+    level: "Sea Salt",
+    link:"/catalog"
+  }
+];
 ---
 
 <main id="Product" class="flex flex-col bg-cover bg-no-repeat min-h-screen">
   <div class="flex flex-col gap-8 py-12 px-6 md:px-16">
-    
-    <!-- Heading -->
+
     <h2 class="text-3xl md:text-4xl text-center font-[PoppinsBold] text-[#E4E4E4]">
       PRODUCTS
     </h2>
 
-
-    <!-- Products Grid -->
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
-      
-      <!-- Item 1 -->
-      <div class="items flex flex-col bg-[#E4E4E4] rounded-lg max-w-[160px] hover:scale-105 transition-transform">
-        <img src={BocahSd.src} class="rounded-t-lg" alt="Bocah SD" />
-        <div class="info p-3 text-center">
-          <p class="font-[PoppinsSemibold] text-[#561306] text-sm">Kripik Cumi Hytam pak Kris Lvl. <span>SD</span></p>
-          <button class="font-[PoppinsBold] mt-2 bg-[#EA6D00] text-[#E4E4E4] px-4 py-1.5 rounded-lg hover:bg-[#E4E4E4] hover:text-[#EA6D00] transition">
-            <a href="/catalog">Lebih Detail</a>
-          </button>
+      {products.map((item) => (
+        <div
+          class="items flex flex-col bg-[#E4E4E4] rounded-lg max-w-[160px] hover:scale-105 transition-transform"
+          key={item.id}
+        >
+          <img src={item.image} class="rounded-t-lg" alt={item.level} />
+          <div class="info p-3 text-center">
+            <p class="font-[PoppinsSemibold] text-[#561306] text-sm">
+              {item.name}
+            </p>
+            <button class="font-[PoppinsBold] mt-2 bg-[#EA6D00] text-[#E4E4E4] px-4 py-1.5 rounded-lg hover:bg-[#E4E4E4] hover:text-[#EA6D00] transition">
+              <a href={item.link}>Lihat Lebih</a>
+            </button>
+          </div>
         </div>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="items flex flex-col bg-[#E4E4E4] rounded-lg max-w-[160px] hover:scale-105 transition-transform">
-        <img src={BocahSmp.src} class="rounded-t-lg" alt="Bocah SMP" />
-        <div class="info p-3 text-center">
-          <p class="font-[PoppinsSemibold] text-[#561306] text-sm">Kripik Cumi Hytam pak Kris Lvl. <span>SMP</span></p>
-          <button class="font-[PoppinsBold] mt-2 bg-[#EA6D00] text-[#E4E4E4] px-4 py-1.5 rounded-lg hover:bg-[#E4E4E4] hover:text-[#EA6D00] transition">
-            <a href="/catalog">Lebih Detail</a>
-          </button>
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="items flex flex-col bg-[#E4E4E4] rounded-lg max-w-[160px] hover:scale-105 transition-transform">
-        <img src={BocahSmk.src} class="rounded-t-lg" alt="Bocah SMK" />
-        <div class="info p-3 text-center">
-          <p class="font-[PoppinsSemibold] text-[#561306] text-sm">Kripik Cumi Hytam pak Kris Lvl. <span>SMK</span></p>
-          <button class="font-[PoppinsBold] mt-2 bg-[#EA6D00] text-[#E4E4E4] px-4 py-1.5 rounded-lg hover:bg-[#E4E4E4] hover:text-[#EA6D00] transition">
-             <a href="/catalog">Lebih Detail</a>
-          </button>
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="items flex flex-col bg-[#E4E4E4] rounded-lg max-w-[160px] hover:scale-105 transition-transform">
-        <img src={Paket.src} class="rounded-t-lg" alt="Bundle" />
-        <div class="info p-3 text-center">
-          <p class="font-[PoppinsSemibold] text-[#561306] text-sm">Kripik Cumi Hytam pak Kris <span>Bundle</span></p>
-          <button class="font-[PoppinsBold] mt-2 bg-[#EA6D00] text-[#E4E4E4] px-4 py-1.5 rounded-lg hover:bg-[#E4E4E4] hover:text-[#EA6D00] transition">
-             <a href="/catalog">Lebih Detail</a>
-          </button>
-        </div>
-      </div>
-
+      ))}
     </div>
+  <div id="pagination" class="flex justify-center items-center gap-2 mt-10"></div>
   </div>
 </main>
 
 <style>
-  main{
+  main {
     background-image: url("../assets/images/background/patternmain.png");
   }
 </style>

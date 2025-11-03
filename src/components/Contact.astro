@@ -1,6 +1,5 @@
 ---
-import PatternContact from "../assets/images/background/patternContact.png"
-import PatternMain from "../assets/images/background/patternmain.png"
+
 import contact from "../assets/images/Contact Us/Contactus.svg";
 import Email from "../assets/images/Contact Us/EmailIcon.svg";
 import Phone from "../assets/images/Contact Us/WhatsappIcon.svg";
@@ -9,7 +8,6 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
 ---
 
 <main id="Contact" class="flex flex-col text-[#e4e4e4] font-[Poppins]">
-  <!-- HEADER -->
   <div
     class="head w-full flex justify-center items-center p-10 bg-cover bg-no-repeat"
    
@@ -17,12 +15,9 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
     <img src={contact.src} class="w-64 md:w-80" alt="contact us" />
   </div>
 
-  <!-- FORM & ICON WRAPPER -->
   <div
     class="form flex flex-col md:flex-row justify-evenly items-start gap-10 p-10 bg-cover bg-no-repeat"
-  >
-    <!-- FORM -->
-     
+  >     
     <form
     id="feedbackForm"
       action=""
@@ -74,7 +69,6 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
        <p id="feedbackStatus" class="text-center text-sm mt-3 text-gray-400"></p>
     </form>
 
-    <!-- ICONS (manual 4 item) -->
     <div
       class="grid grid-cols-2 grid-rows-2 gap-4 w-full md:w-1/2 place-items-center"
     >
@@ -131,7 +125,6 @@ import WhatsApp from "../assets/images/Contact Us/PhoneIcon.svg";
     background-image: url('../assets/images/background/patternmain.png');
   }
 
-  /* Sembunyikan icon di mobile */
   @media (max-width: 640px) {
     .icons {
       display: none;

@@ -3,31 +3,29 @@ import Slog from "../assets/images/Hero_Content_Tittle2.png"
 ---
 
 <main id="Hero" class="rounded-bl-[40px] rounded-br-[40px]">
-    <!-- <Nav /> Navbar components -->
-
     <div>
-        <div class="overlay h-full px-12 py-8 flex flex-col md:flex-row">
+        <div class="overlay h-full w-full px-12 py-8 flex flex-col md:flex-row">
             <div
                 class="child md:px-10 md:items-center  md:justify-center md:py-7"
             >
             <div class="typho mb-4">
                 <h1 class="text-5xl text-primary font-bold font-[PoppinsSemibold]">
                     Temukan Rasa disetiap suapan
-                </h1> <!-- hero section header -->
-                <p class="w-50 md:w-150 font-[Poppins] md:text-left">  <!-- hero section caption -->
+                </h1>
+                <p class="w-50 md:w-150 font-[Poppins] md:text-left"> 
                    Keripik Cumi GurihPedas menghadirkan sensasi kriuk yang bikin nagih, cita rasa laut yang autentik, dan kebahagiaan di setiap gigitan!,
                    Setiap gigitan memberi sensasi laut yang autentik, seolah kamu sedang menikmati cumi segar langsung dari pantai.
                    Karena bagi kami, kebahagiaan sejati adalah saat kamu tersenyum menikmati lezatnya keripik cumi buatan lokal.
                 </p>
             </div>
-            <div class="flex flex-col gap-4 md:flex-row"> <!-- buttons group -->
+            <div class="flex flex-col gap-4 md:flex-row"> 
 
                 <button
                     class="px-3 py-1.5  rounded-lg text-white "
                 >
                 <a href="/catalog" class=" decoration-red-600/30">
                     Pesan Sekarang!
-                </a>  <!-- menuju ke halaman katalog -->
+                </a>
                 </button>
                 <span class="text-center italic font-sm">atau</span>
                 <button
@@ -35,11 +33,11 @@ import Slog from "../assets/images/Hero_Content_Tittle2.png"
                 >
                 <a href="https://wa.me/6281327370987" class="decoration-red-600/30">
                     Tanya Penjual
-                </a> <!-- menghubungi nomor penjual -->
+                </a> 
                 </button>
             </div>
             </div>
-            <div class="child hidden md:flex">
+            <div class="child hidden lg:flex">
                 <img src={Slog.src}  alt="Slog" />
             </div>
         </div>
@@ -53,14 +51,14 @@ import Slog from "../assets/images/Hero_Content_Tittle2.png"
         src: url("../assets/fonts/Poppins/Poppins-Regular.ttf");
     }
     main {
-        background-image: url("../assets/images/Hero_Content_Polos.png"); /*background pada hero section */
-        height: 100vh;
+        background-image: url("../assets/images/Hero_Content_Polos.png"); 
         background-repeat: no-repeat;
         background-size: cover;
         color: #e4e4e4;
     }
     .overlay {
-        background-color: hsla(0, 0%, 0%, 0.543);
+        background-color: hsla(0, 0%, 0%, 0.643);
+        height:100vh;
     }
     button {
         font-family: "PoppinsSemiBold";
