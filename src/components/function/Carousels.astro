@@ -121,44 +121,55 @@ const slides = [Gallery1, Gallery2, Gallery3];
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".carousel-slide");
-    const indicators = document.querySelectorAll(".carousel-indicators span");
-    const slidesContainer = document.getElementById("slides");
-    let currentIndex = 0;
+  const slidesContainer = document.getElementById("slides");
+  const slides = slidesContainer?.querySelectorAll(".carousel-slide") || [];
+  const indicators = document.querySelectorAll(".carousel-indicators span");
+  const nextBtn = document.getElementById("next");
+  const prevBtn = document.getElementById("prev");
+  let currentIndex = 0;
 
-    const updateCarousel = () => {
-      slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+  // Fungsi untuk memperbarui posisi slide & indikator
+  const updateCarousel = () => {
+    if (!slidesContainer) return;
 
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("blur", i !== currentIndex);
-      });
+    slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-      indicators.forEach((dot, i) => {
-        dot.classList.toggle("active", i === currentIndex);
-      });
-    };
-
-    const nextSlide = () => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      updateCarousel();
-    };
-
-    const prevSlide = () => {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      updateCarousel();
-    };
-
-    // indikator panah kanan & kiri
-    document.getElementById("next").addEventListener("click", nextSlide);
-    document.getElementById("prev").addEventListener("click", prevSlide);
-
-    indicators.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        currentIndex = Number(dot.dataset.index);
-        updateCarousel();
-      });
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("blur", i !== currentIndex);
     });
 
+    indicators.forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentIndex);
+    });
+  };
+
+  // Pindah ke slide berikutnya
+  const nextSlide = () => {
+    if (slides.length === 0) return;
+    currentIndex = (currentIndex + 1) % slides.length;
     updateCarousel();
+  };
+
+  // Pindah ke slide sebelumnya
+  const prevSlide = () => {
+    if (slides.length === 0) return;
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel();
+  };
+
+  // Event listener tombol next & prev (dengan optional chaining agar aman)
+  nextBtn?.addEventListener("click", nextSlide);
+  prevBtn?.addEventListener("click", prevSlide);
+
+  // Event listener indikator
+  indicators.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentIndex = index;
+      updateCarousel();
+    });
   });
+
+  updateCarousel();
+});
+
 </script>

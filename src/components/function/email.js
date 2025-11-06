@@ -24,14 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
       //MESSAGE STATUS
       .then(
         () => {
-          status.textContent = "✅ Feedback berhasil dikirim!";
+          status.textContent = "Status : Success ,Feedback berhasil dikirim!";
           status.classList.remove("text-gray-400");
           status.classList.add("text-green-400");
           form.reset();
         },
         (error) => {
           console.error("EmailJS Error:", error);
-          status.textContent = "❌ Gagal mengirim. Coba lagi.";
+          status.textContent = "Status : Error, Gagal mengirim. Coba lagi.";
           status.classList.remove("text-gray-400");
           status.classList.add("text-red-400");
         }

@@ -167,6 +167,7 @@ const products = [
   const paginationContainer = document.createElement('div');
   paginationContainer.className = "flex justify-center gap-2 mt-10";
 
+  //Fungsi Konfirmasi hapus pesanan
   const discardAllBtn = document.getElementById("discardAllBtn");
   const confirmModal = document.getElementById("confirmModal");
   const confirmDiscard = document.getElementById("confirmDiscard");
@@ -193,7 +194,7 @@ const products = [
   }
 
 
-
+//Me-render Produk dihalaman
   function renderProducts(sortType = 'all', page = 1) {
     let sortedProducts = [...PRODUCTS];
     
@@ -205,6 +206,7 @@ const products = [
     const end = start + PRODUCTS_PER_PAGE;
     const paginatedProducts = sortedProducts.slice(start, end);
 
+    //Produk yang di-klik akan muncul di sidebar Cart
     productGrid.innerHTML = paginatedProducts.map(product => `
       <div class="bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-amber-500/20 transition-all hover:-translate-y-1 border border-gray-700">
         <div class="relative">
@@ -224,6 +226,8 @@ const products = [
 
     renderPagination(totalPages, page);
   }
+
+  //Pagination untuk membatasi jumlah produk yang ditampilkan
   function renderPagination(totalPages, activePage) {
     paginationContainer.innerHTML = '';
 
@@ -245,6 +249,7 @@ const products = [
     }
   }
 
+  //Me-render sidebar cart saat user memesan produk
   function renderCart() {
     if (cart.length === 0) {
       cartItems.innerHTML = `

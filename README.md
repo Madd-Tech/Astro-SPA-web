@@ -3,16 +3,19 @@
 Proyek ini dibangun menggunakan **[Astro](https://astro.build)** — Framework modern dengan kecepatan dan efisiensi yang sesuai untuk membangun website dengan tema UMKM
 
 ---
+## Fitur Utama
+- Menampilkan Halaman website tema UMKM
+- Menampilkan Halaman Website yang responsif
+- Menampilkan Gallery Product
 
-## 🚀 Fitur Utama
-- ⚡ Build statis dengan performa tinggi
-- 🧩 Komponen modular menggunakan Astro + React/Vue/Svelte
-- 🎨 Styling dengan Tailwind CSS
-- 🌍 Siap deploy ke Netlify / Vercel
+##  Fitur Interaktif
+-  Halaman Navigasi yang responsif
+-  Halaman Form Kontak dengan Gmail
+-  Halaman Katalog dengan sistem pemesanan sederhana
 
 ---
 
-## 🛠️ Instalasi
+##  Instalasi
 
 ## Clone repo
 ```bash
