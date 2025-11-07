@@ -2,21 +2,22 @@
 import mainLogo from "../assets/icons/logo.svg";
 ---
 
-<nav id="nav" class="flex sticky top-0 z-100 items-center justify-between w-full px-6 p-2 shadow-md bg-white text-gray-800 relative">
- 
+<nav id="nav" class="flex sticky top-0 z-50 items-center justify-between w-full px-6 p-2 shadow-md bg-[#262626] text-[#e4e4e4]">
+  <!-- Logo -->
   <div class="flex items-center gap-2">
     <a href="/#Hero">
-    <img
-      src={mainLogo.src}
-      width="150"
-      height="80"
-      alt="Cart Logo"
-      class="transition duration-300 hover:drop-shadow-[0_0_10px_#D64218] hover:brightness-125"
-    />
+      <img
+        src={mainLogo.src}
+        width="150"
+        height="80"
+        alt="Cart Logo"
+        class="transition duration-300 hover:drop-shadow-[0_0_10px_#D64218] hover:brightness-125"
+      />
     </a>
   </div>
 
-  <button id="menu-toggle" class="block md:hidden focus:outline-none z-20 relative">
+  <!-- Hamburger Button -->
+  <button id="menu-toggle" class="block md:hidden focus:outline-none z-20">
     <svg
       id="hamburger-icon"
       class="w-7 h-7 transition-transform duration-300"
@@ -29,19 +30,19 @@ import mainLogo from "../assets/icons/logo.svg";
     </svg>
   </button>
 
+  <!-- Menu -->
   <ul
     id="menu"
-    class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out md:max-h-none md:flex
-     flex-col md:flex-row gap-4 md:gap-9 absolute md:static font-semibold md:bg-transparent left-0 
-     w-full md:w-auto top-16 md:top-auto p-0 md:p-0 shadow-md md:shadow-none"
+    class="absolute md:static left-0 top-16 w-full md:w-auto bg-[#262626] md:bg-transparent flex flex-col md:flex-row gap-4 md:gap-9 
+           overflow-hidden max-h-0 md:max-h-none transition-all duration-500 ease-in-out shadow-md md:shadow-none
+           px-6 md:px-0 box-border"
   >
-    <li><a href="/#Profile" class="block px-4 py-2 ">Profile</a></li>
-    <li><a href="/#Gallery" class="block px-4 py-2 ">Gallery</a></li>  
-    <li><a href="/#Product" class="block px-4 py-2 ">Product</a></li>
-    <li><a href="/#Contact" class="block px-4 py-2 ">Contact</a></li>
-    <li><a href="/catalog" class="block px-4 py-2 ">Catalog</a></li>
+    <li><a href="/#Profile" class="block px-4 py-2 hover:text-[#D64218] hover:underline">Profile</a></li>
+    <li><a href="/#Gallery" class="block px-4 py-2 hover:text-[#D64218] hover:underline">Gallery</a></li>  
+    <li><a href="/#Product" class="block px-4 py-2 hover:text-[#D64218] hover:underline">Product</a></li>
+    <li><a href="/#Contact" class="block px-4 py-2 hover:text-[#D64218] hover:underline">Contact</a></li>
+    <li><a href="/catalog" class="block px-4 py-2 hover:text-[#D64218] hover:underline">Catalog</a></li>
   </ul>
-
 </nav>
 
 <script is:inline>
@@ -51,31 +52,18 @@ import mainLogo from "../assets/icons/logo.svg";
     const icon = document.getElementById('hamburger-icon');
 
     toggle.addEventListener('click', () => {
-
-      if (menu.classList.contains('max-h-0')) {
-        menu.classList.remove('max-h-0');
-        menu.classList.add('max-h-96', 'p-4'); 
-      } else {
-        menu.classList.add('max-h-0');
-        menu.classList.remove('max-h-96', 'p-4'); 
-      }
-
+      const isOpen = !menu.classList.contains('max-h-0');
+      menu.classList.toggle('max-h-0', isOpen);
+      menu.classList.toggle('max-h-96', !isOpen);
+      menu.classList.toggle('p-4', !isOpen);
       icon.classList.toggle('rotate-90');
+      document.body.classList.toggle('overflow-hidden', !isOpen); // cegah scroll saat menu terbuka
     });
   });
 </script>
 
 <style>
-    nav{
-        background-color: #262626;
-        color:#e4e4e4;
-    }
-    ul{
-        background-color: #262626;
-    }
-    ul li:hover{
-     color:#D64218;
-     text-decoration: underline;
-    }
-    
+  html, body {
+    overflow-x: hidden; /* 🔒 mencegah gap horizontal */
+  }
 </style>
