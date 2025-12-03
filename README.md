@@ -19,7 +19,7 @@ Proyek ini dibangun menggunakan **[Astro](https://astro.build)** — Framework m
 
 ## Clone repo
 ```bash
-git clone https://github.com/Deadlyzz021006/Astro-SPA-web.git
+git clone https://github.com/Madd-Tech/Astro-SPA-web.git
 cd Astro-SPA-web
 
 ## Install dependencies
